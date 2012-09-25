@@ -1,4 +1,5 @@
-require './lib/dalli/version'
+$:.unshift File.expand_path('./lib', File.dirname(__FILE__))
+require 'dalli/version'
 
 Gem::Specification.new do |s|
   s.name = %q{dalli}
@@ -23,7 +24,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.summary = %q{High performance memcached client for Ruby}
   s.test_files = Dir.glob("test/**/*")
-  s.add_development_dependency(%q<shoulda>, [">= 0"])
+  s.add_dvelopment_dependency(%q<shoulda>, [">= 0"])
   s.add_development_dependency(%q<mocha>, [">= 0"])
   s.add_development_dependency(%q<rails>, [">= 0"])
   s.add_development_dependency(%q<memcache-client>, [">= 1.8.5"])
